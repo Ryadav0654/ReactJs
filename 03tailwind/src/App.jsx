@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <h1 >Hey! This is my first tailwind css Project </h1>
+      <h1 className='text-4xl p-3'>Hey! This is my first tailwind css Project </h1>
     </>
   )
 }
