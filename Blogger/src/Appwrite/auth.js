@@ -1,10 +1,13 @@
 import conf from "../conf/conf";
 import { Client, Account, ID } from "appwrite";
 
+// define a AuthService class
+
 export class AuthService {
   client = new Client();
   account;
 
+  //create constructor 
   constructor() {
     this.client
       .setEndpoint(conf.appwriteUrl)
@@ -12,6 +15,7 @@ export class AuthService {
     this.account = new Account(this.client);
   }
 
+  //define createAccount function which create a account
   async createAccount({ email, password, name }) {
     try {
       const userAccount = await this.account.create(
@@ -31,6 +35,7 @@ export class AuthService {
     }
   }
 
+  //define login function => if user have account then user login that accout using email and password
   async login({ email, password }) {
     try {
       return await this.account.createEmailPasswordSession(email, password);
@@ -39,6 +44,7 @@ export class AuthService {
     }
   }
 
+  //define getCurrentUser function which gives the current user
   async getCurrentUser() {
     try {
       return await this.account.get();
@@ -50,6 +56,7 @@ export class AuthService {
   }
 
 
+  //define logout function which work is stop all sessions 
   async logout(){
     try {
         await this.account.deleteSessions();
