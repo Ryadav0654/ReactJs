@@ -31,6 +31,7 @@ function App() {
       <main>
         {/* {outlet} */}
         <h1 className='text-3xl font-bold '>A Blogger website with appwrite.</h1>
+      
       </main>
       <Footer/>
     </div>
