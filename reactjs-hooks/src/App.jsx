@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import UseEffectHooks from './Components/UseEffectHooks'
+import UseMemoAndCallback from './Components/UseMemoAndCallback'
 import './App.css'
 
 function App() {
@@ -45,8 +45,13 @@ function App() {
      {/* usestate in object  */}
 
     <div>
-      <h1>{details.objectname} and counter {details.counter}</h1>
+      <h2>{details.objectname} and counter {details.counter}</h2>
       <button onClick={Increasecounter}>Increase</button>
+
+      {/* useMemo and useCallback  */}
+        <UseMemoAndCallback/>
+      {/* useEffect Hooks  */}
+      <UseEffectHooks/>
     </div>
 
     </>
